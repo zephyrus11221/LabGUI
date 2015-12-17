@@ -49,13 +49,24 @@ public class TempConversionWindow extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
 	String event = e.getActionCommand();
 	if(event.equals("toF")){
-	    double otpt = Double.parseDouble(f.getText());
-	    otpt = CtoF(otpt);
-	    String s = ""+otpt;
-	    j.setText(s);
+	    try{
+		double otpt = Double.parseDouble(f.getText());
+		otpt = CtoF(otpt);
+		String s = ""+otpt;
+		j.setText(s);}
+	    catch (Exception e) {
+		j.setText("Please use an integer or double input");
+	    }
 	}
 	if(event.equals("toC")){
-	    j.setText("Fish");
+	    try{
+		double otpt = Double.parseDouble(f.getText());
+		otpt = FtoC(otpt);
+		String s = ""+otpt;
+		j.setText(s);}
+	    catch (Exception e) {
+		j.setText("Please use an integer or double input");
+	    }
 	    
 	}
 	
