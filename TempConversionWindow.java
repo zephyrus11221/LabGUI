@@ -1,18 +1,19 @@
 import javax.swing.*;
 import java.awt.*;//NEW STUFF!
 import java.awt.event.*;
+import java.util.*;
 
 public class TempConversionWindow extends JFrame implements ActionListener{
     private Container pane;
+    private JPanel buttons;
     private JLabel j;
     private JTextField f;
 
     public TempConversionWindow() {
 	this.setTitle("Temperature Conversion");
-	this.setSize(600,400);
+	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	this.setSize(800,200);
 	this.setLocation(100,100);
-	this.setDefaultCloseOperation(
-				      EXIT_ON_CLOSE);
 	
 	pane = this.getContentPane();
 	pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
@@ -25,13 +26,18 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 	b2.setActionCommand("toC");
 	
 	
-	f = new JTextField(10);
+	f = new JTextField(20);
 	
-	j = new JLabel("Meaning of life is... ");
+	j = new JLabel("Temperature Conversion!");
+	pane.setComponentOrientation(
+                ComponentOrientation.LEFT_TO_RIGHT);
 	pane.add(f);
-	pane.add(b);
-	pane.add(b2);
-	pane.add(j);
+	buttons.add(b);
+	buttons.add(b2);
+	buttons.add(j);
+	pane.add(buttons,BorderLayout.CENTER);
+	
+
     }
 
     public static double CtoF(double t){
