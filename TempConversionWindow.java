@@ -54,7 +54,7 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 		otpt = CtoF(otpt);
 		String s = ""+otpt;
 		j.setText(s);}
-	    catch (Exception e) {
+	    catch (Exception x) {
 		j.setText("Please use an integer or double input");
 	    }
 	}
@@ -64,7 +64,7 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 		otpt = FtoC(otpt);
 		String s = ""+otpt;
 		j.setText(s);}
-	    catch (Exception e) {
+	    catch (Exception x) {
 		j.setText("Please use an integer or double input");
 	    }
 	    
